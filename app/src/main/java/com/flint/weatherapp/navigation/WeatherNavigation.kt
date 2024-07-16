@@ -1,10 +1,12 @@
 package com.flint.weatherapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.flint.weatherapp.screens.main.MainScreen
+import com.flint.weatherapp.screens.main.MainViewModel
 import com.flint.weatherapp.screens.splash.WeatherSplashScreen
 
 @Composable
@@ -19,7 +21,8 @@ fun WeatherNavigation() {
         }
 
         composable(WeatherScreens.MainScreen.name){
-            MainScreen(navController = navController)
+            val mainViewModel = hiltViewModel<MainViewModel>()
+            MainScreen(navController = navController, mainViewModel)
         }
     }
 }

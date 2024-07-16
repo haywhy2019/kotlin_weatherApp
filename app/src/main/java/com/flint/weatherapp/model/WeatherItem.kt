@@ -1,10 +1,17 @@
 package com.flint.weatherapp.model
 
 data class WeatherItem(
-    val country: String,
-    val lat: Double,
-    val local_names: LocalNames,
-    val lon: Double,
+    val base: String,
+    val clouds: Clouds,
+    val cod: Int,
+    val coord: Coord,
+    val dt: Int,
+    val id: Int,
+    val main: Main,
     val name: String,
-    val state: String
+    val sys: Sys,
+    val timezone: Int,
+    val visibility: Int,
+    val weather: List<WeatherX>,
+    val wind: Wind
 )

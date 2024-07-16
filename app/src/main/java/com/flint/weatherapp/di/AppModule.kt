@@ -22,7 +22,6 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(WeatherApi::class.java)
-
     }
 
 }
